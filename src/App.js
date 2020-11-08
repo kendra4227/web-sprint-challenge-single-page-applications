@@ -7,12 +7,12 @@ import Order from "./components/Order";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <nav>
       <h1>Lambda Eats</h1>
       <div>
-        <Link to = "/">Home</Link>
-        <Link to ="/">Help</Link>
+        <Link to = "/"><button>Home</button></Link>
+        <Link to ="/"><button>Help</button></Link>
         </div>
     </nav>
    

@@ -3,16 +3,19 @@ import {Link} from "react-router-dom"
 import {Card,CardImg, CardTitle, CardSubtitle, Button, CardBody} from "reactstrap";
 
 
+ 
+
 const Home = (props) => {
   console.log ("Home props :" , props);
   return (
     <div>
-      <img  width ="50%" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80 "alt="pizza"/>
+      <img  top width="20%" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80 "alt="pizza"/>
       <h1>Your favorite food, delivered while coding</h1>
       <Link to ="/pizza"><Button color = "primary" >Pizza?</Button></Link>
 
       <div>
         <h2>Food Delivery in Gotham City</h2>
+      
 
         <Card>
           <CardImg top width="20%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRwS2btqK21wqvtneFOmL6VLshkN8_7YRxcg&usqp=CAU" alt = "Chipotle's Mexican Grill" />
@@ -48,8 +51,7 @@ const Home = (props) => {
                     <CardSubtitle>$ - Cafe - Coffee & Tea - Breakfast & Brunch</CardSubtitle>
                     <Button>10-20 min</Button><Button>$3.99 Delivery Fee</Button>
                 </CardBody>
-                </Card>
-
+            </Card>
         
       </div>
     </div>
