@@ -8,16 +8,18 @@ import {Card,CardImg, CardTitle, CardSubtitle, Button, CardBody} from "reactstra
 const Home = (props) => {
   console.log ("Home props :" , props);
   return (
-    <div>
-      <img  top width="20%" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80 "alt="pizza"/>
+    <div className="homeDiv">
+      <div className="pizzaDiv">
+      <img  className="pizzaImg" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80 "alt="pizza"/>
       <h1>Your favorite food, delivered while coding</h1>
-      <Link to ="/pizza"><Button color = "primary" >Pizza?</Button></Link>
+      <Link to ="/pizza"><Button className="pizzaLink" size="lg" color = "info" >Pizza?</Button></Link>
+      </div>
 
-      <div>
-        <h2>Food Delivery in Gotham City</h2>
       
-
-        <Card>
+        <h2 className="delivery">Food Delivery in Gotham City</h2>
+      
+<div className="cardsDiv">
+        <Card className="card">
           <CardImg top width="20%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRwS2btqK21wqvtneFOmL6VLshkN8_7YRxcg&usqp=CAU" alt = "Chipotle's Mexican Grill" />
           <CardBody>
             <CardTitle>Chipotle's Mexican Grill</CardTitle>
@@ -26,7 +28,7 @@ const Home = (props) => {
           </CardBody>
         </Card>
 
-        <Card>
+        <Card className="card">
           <CardImg top width="20%"src="https://pixy.org/src/77/775101.jpg" alt = "McDonald's" />
           <CardBody>
             <CardTitle>McDonald's</CardTitle>
@@ -35,7 +37,7 @@ const Home = (props) => {
           </CardBody>
         </Card>
 
-        <Card>
+        <Card className="card">
                 <CardImg top width="20%" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Sweetgreen_Storefront_%2848237024662%29.jpg" alt="SweetGreen" />
                 <CardBody>
                     <CardTitle>SweetGreen</CardTitle>
@@ -44,7 +46,7 @@ const Home = (props) => {
                 </CardBody>
                 </Card>
 
-                <Card>
+                <Card className="card">
                 <CardImg top width="20%" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Starbucks_logo.jpg" alt="StarBucks" />
                 <CardBody>
                     <CardTitle>StarBucks</CardTitle>

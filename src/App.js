@@ -8,10 +8,10 @@ import Order from "./components/Order";
 const App = () => {
   return (
     <div className="App">
-      <nav>
-      <h1>Lambda Eats</h1>
-      <div>
-        <Link to = "/"><button>Home</button></Link>
+      <nav className="header">
+      <h1 className="logo">Lambda Eats</h1>
+      <div className = "links">
+        <Link clasName="home" to = "/"><button>Home</button></Link>
         <Link to ="/"><button>Help</button></Link>
         </div>
     </nav>

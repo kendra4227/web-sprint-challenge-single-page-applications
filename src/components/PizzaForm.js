@@ -77,49 +77,48 @@ const formSubmit = e => {
 
     return (
         <div>
-           <Form onSubmit={formSubmit} >
-                <FormGroup row>
-                    <Label for="name" sm={2} >Name</Label>
-                    <Col sm={10} >
-                        <Input type="name" name="name" id="name" placeholder="John Doe" value={pizzaState.name} onChange={inputChange} />
-                    </Col>
+           <Form className="pizzaForm" onSubmit={formSubmit} >
+                <FormGroup >
+                <Label for="name" >Name</Label>
+                        <Input className="name" type="text" name="name" id="name" placeholder="John Doe" value={pizzaState.name} onChange={inputChange} />
+                    {errorState.name.length > 2 ? <p className="error">{errorState.name}</p> : null }
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="size" sm={2} >Size</Label>
-                    <Col sm={10} >
-                        <Input type="select" name="size" id="size" value={pizzaState.size} onChange={inputChange} >
+                    <Label for="size">Size</Label>
+                    
+                        <Input  size ="lg" className="size"type="select" name="size" id="size" value={pizzaState.size} onChange={inputChange} >
                         <option value="" >--Select A Size--</option>
                         <option value="Personal" >Personal</option>
                         <option value="Medium" >Medium</option>
                         <option value="Large" >Large</option>
                         <option value="Mega" >Mega</option>
                         </Input>
-                    </Col>
+                        {errorState.size.length > 0 ? <p className="error">{errorState.size}</p> : null }
                 </FormGroup>
                 <FormGroup row>
                     <legend>Pick Your Toppings</legend>
-                    <Col sm={10} >
-                        <FormGroup check>
+                    <Col className="toppings" sm={10} >
+                        <FormGroup className="toppingBox" check>
                             <Label for="pepperoni" check>
-                                <Input type="checkbox" name="pepperoni" value={pizzaState.pepperoni} onChange={inputChange} />{' '}
+                                <Input  className="pepperoni" type="checkbox" name="pepperoni" value={pizzaState.pepperoni} onChange={inputChange} />{' '}
                                 Pepperoni
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label for="mushroom" check>
-                                <Input type="checkbox" name="mushroom" value={pizzaState.mushroom} onChange={inputChange} />{' '}
+                                <Input className="mushroom" type="checkbox" name="mushroom" value={pizzaState.mushroom} onChange={inputChange} />{' '}
                                 Mushroom
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label for="beef" check>
-                                <Input type="checkbox" name="beef" value={pizzaState.beef} onChange={inputChange} />{' '}
+                                <Input className="beef" type="checkbox" name="beef" value={pizzaState.beef} onChange={inputChange} />{' '}
                                 Beef
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label for="special" check>
-                                <Input type="checkbox" name="special" value={pizzaState.special} onChange={inputChange} />{' '}
+                                <Input className="special" type="checkbox" name="special" value={pizzaState.special} onChange={inputChange} />{' '}
                                 Special
                             </Label>
                         </FormGroup>
@@ -140,15 +139,15 @@ const formSubmit = e => {
                 <Button type="submit" color="primary"  >Submit Order</Button>
             </Form>
 
-            <div>
-                <Card body>
+            <div className="order">
+                <Card>
                     <CardTitle>{order.name}</CardTitle>
                     <CardSubtitle>{order.size}</CardSubtitle>
                     <CardText>
-                        {order.pepperoni === true ? "Pepperoni" : null}
-                        {order.mushroom === true ? "Mushroom" : null}
-                        {order.beef === true ? "Beef" : null}
-                        {order.special === true ? "Special" : null}
+                        {order.pepperoni === true ? "Pepperoni" : null}<br></br>
+                        {order.mushroom === true ? "Mushroom" : null}<br></br>
+                        {order.beef === true ? "Beef" : null}<br></br>
+                        {order.special === true ? "Special" : null}<br></br>
                     </CardText>
                     <CardText>{order.instructions}</CardText>
                     {order === [""]  ? <Link to="/order" ><Button>Confirm</Button></Link> : null }
